@@ -171,6 +171,67 @@
             color: var(--chocolate);
         }
 
+        /* Стили для блока об авторе в стиле референса */
+        .author-section {
+            text-align: center;
+        }
+
+        .author-header-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 40px;
+            font-style: italic;
+            color: var(--chocolate);
+            margin-bottom: 5px;
+            font-weight: 400;
+        }
+
+        .author-subtitle {
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 35px;
+            font-weight: 500;
+        }
+
+        .author-stats-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #e6ded7;
+            padding: 16px 0;
+            text-align: left;
+        }
+
+        .author-stats-row:last-of-type {
+            border-bottom: 1px solid #e6ded7;
+            margin-bottom: 30px;
+        }
+
+        .stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--chocolate);
+            min-width: 100px;
+        }
+
+        .stat-desc {
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            text-align: right;
+            margin-bottom: 0;
+        }
+
+        .author-bio-text {
+            text-align: left;
+            margin-top: 25px;
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
         .footer-cta {
             text-align: center;
             background: var(--chocolate);
@@ -233,6 +294,9 @@
             body { padding: 15px 10px; }
             header, section { padding: 30px 20px; }
             .hero h1 { font-size: 30px; }
+            .author-header-name { font-size: 32px; }
+            .stat-num { font-size: 18px; min-width: 80px; }
+            .stat-desc { font-size: 11px; }
         }
     </style>
 </head>
@@ -376,6 +440,37 @@
                 <li>Уютное комьюнити единомышленниц</li>
                 <li>Я иду в этот путь вместе с вами</li>
             </ul>
+        </section>
+
+        <!-- БЛОК ОБ АВТОРЕ -->
+        <section class="author-section">
+            <h2 class="section-title">Об авторе</h2>
+            <div class="author-header-name">Василиса</div>
+            <div class="author-subtitle">Дипломированный психолог · Сексолог</div>
+
+            <div class="author-stats-row">
+                <div class="stat-num">560+</div>
+                <div class="stat-desc">часов практики и консультаций</div>
+            </div>
+            <div class="author-stats-row">
+                <div class="stat-num">vazilissaa</div>
+                <div class="stat-desc">автор блога и проекта</div>
+            </div>
+            <div class="author-stats-row">
+                <div class="stat-num">100%</div>
+                <div class="stat-desc">свободы от роли «хорошей девочки»</div>
+            </div>
+
+            <div class="photo-container" style="margin-top: 30px;">
+                <img src="images/author.jpg" alt="Василиса — психолог и сексолог" style="object-position: center 30%;">
+            </div>
+
+            <p class="author-bio-text">
+                Я знаю по себе, что такое годами жить в режиме жесткого контроля и попыток быть удобной для всех вокруг. Но настоящая жизнь и настоящий кайф начинаются ровно в тот момент, когда ты перестаешь заслуживать любовь и выбираешь себя. 
+            </p>
+            <p class="author-bio-text">
+                «Код Удовольствия» — это квинтэссенция бережной психологии, телесных практик и честного разговора о женской свободе, без занудной теории и скучных догм.
+            </p>
         </section>
 
         <!-- ФИНАЛ / CTA -->
