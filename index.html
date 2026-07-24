@@ -1,412 +1,396 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="ru">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
-  <title></title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="2299.77">
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>КОД УДОВОЛЬСТВИЯ | Практический интенсив</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #f7f4f0;
+            --card-bg: #ffffff;
+            --text-main: #2c2c2c;
+            --text-muted: #665c54;
+            --chocolate: #3b261b;
+            --accent: #7b523b;
+            --accent-light: #f4ece6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        header, section {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 50px 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(59, 38, 27, 0.04);
+        }
+
+        .hero {
+            text-align: center;
+            background: var(--chocolate);
+            color: #fff;
+        }
+
+        .hero h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 14px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #d4b5a0;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #f0e6e0;
+            font-weight: 300;
+            max-width: 500px;
+            margin: 0 auto 25px auto;
+        }
+
+        .hero .author {
+            font-style: italic;
+            color: #d4b5a0;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Стиль для фотографий */
+        .photo-container {
+            margin: 25px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .photo-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+            max-height: 400px;
+        }
+
+        h2.section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 13px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--chocolate);
+            margin-bottom: 20px;
+        }
+
+        p, li {
+            font-size: 16px;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 12px;
+        }
+
+        ul li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .box {
+            background: var(--accent-light);
+            padding: 25px;
+            border-radius: 12px;
+        }
+
+        .box h4 {
+            font-family: 'Playfair Display', serif;
+            color: var(--chocolate);
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .program-day {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .program-day:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .program-day strong {
+            color: var(--chocolate);
+        }
+
+        .footer-cta {
+            text-align: center;
+            background: var(--chocolate);
+            color: #fff;
+        }
+
+        .footer-cta h3 {
+            color: #fff;
+        }
+
+        .footer-cta p {
+            color: #f0e6e0;
+        }
+
+        .price-tag {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 600;
+            color: #d4b5a0;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px 30px;
+            border-radius: 12px;
+            display: inline-block;
+            margin: 20px 0;
+            border: 1px solid rgba(212, 181, 160, 0.2);
+        }
+
+        .btn {
+            display: inline-block;
+            background: #d4b5a0;
+            color: var(--chocolate);
+            padding: 16px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #fff;
+        }
+
+        .note {
+            font-size: 14px;
+            font-style: italic;
+            margin-top: 15px;
+            color: #c5b2a7;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 15px 10px; }
+            header, section { padding: 30px 20px; }
+            .hero h1 { font-size: 30px; }
+        }
+    </style>
 </head>
 <body>
-<p class="p1">&lt;!DOCTYPE html&gt;</p>
-<p class="p1">&lt;html lang="ru"&gt;</p>
-<p class="p1">&lt;head&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta charset="UTF-8"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;КОД УДОВОЛЬСТВИЯ | Практический интенсив&lt;/title&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>:root {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--bg-color: #f7f4f0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--card-bg: #ffffff;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--text-main: #2c2c2c;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--text-muted: #665c54;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--chocolate: #3b261b;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--accent: #7b523b;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>--accent-light: #f4ece6;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>* {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-sizing: border-box;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Plus Jakarta Sans', sans-serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background-color: var(--bg-color);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-main);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>line-height: 1.6;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 40px 20px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.container {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>max-width: 680px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>header, section {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: var(--card-bg);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 50px 40px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 30px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 10px 30px rgba(59, 38, 27, 0.04);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: var(--chocolate);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero h2 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Playfair Display', serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 14px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: 3px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-transform: uppercase;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #d4b5a0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero h1 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Playfair Display', serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 38px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero p {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 18px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #f0e6e0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 300;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>max-width: 500px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 0 auto 25px auto;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.hero .author {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-style: italic;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #d4b5a0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Playfair Display', serif;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>/* Стиль для фотографий */</p>
-<p class="p1"><span class="Apple-converted-space">        </span>.photo-container {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 25px 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>overflow: hidden;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>box-shadow: 0 4px 15px rgba(0,0,0,0.1);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.photo-container img {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>width: 100%;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>height: auto;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: block;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>object-fit: cover;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>max-height: 400px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>h2.section-title {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Playfair Display', serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 13px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>letter-spacing: 2px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-transform: uppercase;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--accent);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>h3 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Playfair Display', serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 24px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--chocolate);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>p, li {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 16px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--text-muted);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>ul {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>list-style: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding-left: 0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>ul li {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: relative;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding-left: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>ul li::before {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>content: "—";</p>
-<p class="p1"><span class="Apple-converted-space">            </span>position: absolute;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>left: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--accent);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.grid-2 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: grid;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>grid-template-columns: 1fr;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>gap: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.box {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: var(--accent-light);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 25px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.box h4 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Playfair Display', serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--chocolate);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 10px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 18px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.program-day {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: 1px solid #eee;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.program-day:last-child {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-bottom: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding-bottom: 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-bottom: 0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.program-day strong {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--chocolate);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.footer-cta {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: var(--chocolate);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.footer-cta h3 {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.footer-cta p {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #f0e6e0;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.price-tag {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-family: 'Playfair Display', serif;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 36px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #d4b5a0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: rgba(255, 255, 255, 0.05);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 15px 30px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 12px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: inline-block;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin: 20px 0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border: 1px solid rgba(212, 181, 160, 0.2);</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.btn {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>display: inline-block;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #d4b5a0;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: var(--chocolate);</p>
-<p class="p1"><span class="Apple-converted-space">            </span>padding: 16px 35px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>border-radius: 30px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>text-decoration: none;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-weight: 600;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 20px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>transition: background 0.3s ease;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.btn:hover {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>background: #fff;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>.note {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-size: 14px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>font-style: italic;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>margin-top: 15px;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>color: #c5b2a7;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>@media (max-width: 600px) {</p>
-<p class="p1"><span class="Apple-converted-space">            </span>body { padding: 15px 10px; }</p>
-<p class="p1"><span class="Apple-converted-space">            </span>header, section { padding: 30px 20px; }</p>
-<p class="p1"><span class="Apple-converted-space">            </span>.hero h1 { font-size: 30px; }</p>
-<p class="p1"><span class="Apple-converted-space">        </span>}</p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
-<p class="p1">&lt;/head&gt;</p>
-<p class="p1">&lt;body&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;div class="container"&gt;</p>
-<p class="p2"><span class="Apple-converted-space">        </span></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- HERO --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;header class="hero"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;Практический интенсив&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h1&gt;Код Удовольствия&lt;/h1&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;10-дневная глубокая перезагрузка для каждой девушки, которая устала от контроля и хочет кайфа.&lt;/p&gt;</p>
-<p class="p2"><span class="Apple-converted-space">            </span></p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Место для вашего фото в шапке (положите hero-bg.jpg в папку images) --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="photo-container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;img src="images/hero-bg.jpg" alt="Василиса — Код Удовольствия"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="author"&gt;Автор: Василиса&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/header&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- ФИЛОСОФИЯ --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;section&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="section-title"&gt;Философия&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Манифест интенсива&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Я создала этот интенсив не для того, чтобы вы зубрили теорию. Мне не хотелось делать очередной «курс про секс» с говорящей головой. Мне хотелось действия.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Выключить внутренний стресс и зажатую челюсть от вечной гонки.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Найти свои личные «кнопки» удовольствия, а не гадать на кофейной гуще.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Перестать сканировать себя перед зеркалом каждое утро в поисках дефектов.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p style="margin-top: 20px;"&gt;Это 10 дней кайфа, который мы заберем в свою реальную жизнь. И я прохожу этот путь вместе с вами от первого до последнего дня.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- АУДИТОРИЯ --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;section&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="section-title"&gt;Аудитория&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Для кого этот интенсив?&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p style="margin-bottom: 25px;"&gt;Абсолютно для каждой. Неважно, в отношениях ты, свободна, у тебя был сложный опыт или его не было вообще.&lt;/p&gt;</p>
-<p class="p2"><span class="Apple-converted-space">            </span></p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid-2"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="box"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h4&gt;В отношениях&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;Хочешь вернуть искру, глубину и убрать бытовой застой? Подойдет на 100%.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="box"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h4&gt;Свободна&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;p&gt;Устала от неопределенности и не понимаешь, почему выбираешь «не тех»? Подойдет.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="box" style="margin-top: 20px;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;h4&gt;С багажом опыта&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;Накопила внутренние блоки, стыд и страхи? Тем более подойдет.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p style="margin-top: 20px; font-weight: 500; color: var(--chocolate);"&gt;Мы работаем с базой самой себя, а не с тем, как «быть удобной для мужчины».&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- ТРАНСФОРМАЦИЯ --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;section&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="section-title"&gt;Трансформация&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Что убираем / Что забираем&lt;/h3&gt;</p>
-<p class="p2"><span class="Apple-converted-space">            </span></p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="grid-2" style="margin-bottom: 25px;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="box" style="background: #faf6f5;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h4 style="color: #8c4a32;"&gt;Что выбрасываем:&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li&gt;Липкий стыд за себя, свое тело и свои желания.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li&gt;Зажимы в челюсти и теле от хронического стресса.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li&gt;Утреннего внутреннего критика с линейкой и лупой перед зеркалом.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li&gt;Привычку заслуживать любовь и одобрение.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;div class="box" style="background: #f0f4f1;"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;h4 style="color: #3b533f;"&gt;Что забираем навсегда:&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li&gt;Состояние «я офигенная» на постоянной основе, а не по праздникам.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li&gt;Настоящую свободу от чужих оценок и навязанных ролей.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                        </span>&lt;li&gt;Право просто быть, дышать и кайфовать от собственной жизни.&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                    </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Дополнительное фото в блок трансформации (положите intensive-photo.jpg в папку images) --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="photo-container"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;img src="images/intensive-photo.jpg" alt="Атмосфера интенсива"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- ПРОГРАММА 1-5 --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;section&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="section-title"&gt;Программа&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Дни 1 – 5: Фундамент и тело&lt;/h3&gt;</p>
-<p class="p2"><span class="Apple-converted-space">            </span></p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="program-day"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;День 1.&lt;/strong&gt; Диагностика установок. Убираем мусор из головы и перестаем подстраиваться под чужие ожидания.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="program-day"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;День 2.&lt;/strong&gt; Работа с зажимами в теле. Возвращаем дыхание, убираем телесные блоки, которые душат либидо и энергию.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="program-day"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;День 3.&lt;/strong&gt; Сексуальность как энергия. Перестаем воспринимать секс через призму «стыдно/нельзя».&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="program-day"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;День 4.&lt;/strong&gt; «Код отражения». Та самая зеркальная медитация. Учимся смотреть на себя без критики.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="program-day"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;День 5.&lt;/strong&gt; Ловушка «музы» и «наставницы». Почему пытаться быть для мужчины удобной учительницей — тупик для близости.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- ПРОГРАММА 6-10 --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;section&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="section-title"&gt;Программа&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Дни 6 – 10: Состояние и закрепление&lt;/h3&gt;</p>
-<p class="p2"><span class="Apple-converted-space">            </span></p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="program-day"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;День 6.&lt;/strong&gt; Свобода от оценок. Выстраиваем личные границы без чувства вины и извинений за себя.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="program-day"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;День 7.&lt;/strong&gt; Внутренняя опора. Закрепляем состояние «я офигенная» 24/7 независимо от внешних обстоятельств.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="program-day"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;День 8.&lt;/strong&gt; Качество коммуникации. Почему честный диалог и отсутствие запретов важнее любых заученных «техник».&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="program-day"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;День 9.&lt;/strong&gt; Энергия желания. Учимся хотеть и получать без внутреннего сопротивления.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="program-day"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;p&gt;&lt;strong&gt;День 10.&lt;/strong&gt; Твой личный код. Интегрируем практики в реальную жизнь и строим свою систему кайфа.&lt;/p&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- РЕЗУЛЬТАТ И ФОРМАТ --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;section&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2 class="section-title"&gt;Формат&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Результат и побочные эффекты&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;&lt;strong&gt;Приятные побочные эффекты:&lt;/strong&gt; Когда меняется твоя внутренняя оптика, вокруг меняется абсолютно всё. Мужчина начинает зажимать тебя на каждом углу, дарить цветы без повода, бронировать отель для свиданий и смотреть так, будто ты единственное, что имеет значение.&lt;/p&gt;</p>
-<p class="p2"><span class="Apple-converted-space">            </span></p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h4 style="font-family: 'Playfair Display', serif; color: var(--chocolate); margin: 25px 0 10px 0; font-size: 18px;"&gt;Как это устроено:&lt;/h4&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Только практика и результат&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Видео, аудио и наглядные материалы&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Уютное комьюнити единомышленниц&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;li&gt;Я иду в этот путь вместе с вами&lt;/li&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/ul&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/section&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;!-- ФИНАЛ / CTA --&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;header class="hero footer-cta"&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h2&gt;Старт 8 августа&lt;/h2&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;h3&gt;Готова сделать это для себя?&lt;/h3&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p&gt;Каждая участница получает красивый именной сертификат.&lt;/p&gt;</p>
-<p class="p2"><span class="Apple-converted-space">            </span></p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="price-tag"&gt;859 ₽&lt;/div&gt;</p>
-<p class="p2"><span class="Apple-converted-space">            </span></p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;p style="font-size: 15px; margin-bottom: 10px;"&gt;&lt;strong&gt;Специальное условие:&lt;/strong&gt; Для всех бывших и действующих клиентов действует персональная скидка! Уточняйте в личных сообщениях.&lt;/p&gt;</p>
-<p class="p2"><span class="Apple-converted-space">            </span></p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">                </span>&lt;a href="https://t.me/vasilisa_potapova" class="btn"&gt;Записаться на интенсив&lt;/a&gt;</p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;/div&gt;</p>
-<p class="p2"><span class="Apple-converted-space">            </span></p>
-<p class="p1"><span class="Apple-converted-space">            </span>&lt;div class="note"&gt;Места ограничены для комфортной атмосферы и созвонов.&lt;/div&gt;</p>
-<p class="p1"><span class="Apple-converted-space">        </span>&lt;/header&gt;</p>
-<p class="p2"><br></p>
-<p class="p1"><span class="Apple-converted-space">    </span>&lt;/div&gt;</p>
-<p class="p2"><br></p>
-<p class="p1">&lt;/body&gt;</p>
-<p class="p1">&lt;/html&gt;</p>
+
+    <div class="container">
+        
+        <!-- HERO -->
+        <header class="hero">
+            <h2>Практический интенсив</h2>
+            <h1>Код Удовольствия</h1>
+            <p>10-дневная глубокая перезагрузка для каждой девушки, которая устала от контроля и хочет кайфа.</p>
+            
+            <!-- Место для вашего фото в шапке (положите hero-bg.jpg в папку images) -->
+            <div class="photo-container">
+                <img src="images/hero-bg.jpg" alt="Василиса — Код Удовольствия">
+            </div>
+
+            <div class="author">Автор: Василиса</div>
+        </header>
+
+        <!-- ФИЛОСОФИЯ -->
+        <section>
+            <h2 class="section-title">Философия</h2>
+            <h3>Манифест интенсива</h3>
+            <p>Я создала этот интенсив не для того, чтобы вы зубрили теорию. Мне не хотелось делать очередной «курс про секс» с говорящей головой. Мне хотелось действия.</p>
+            <ul>
+                <li>Выключить внутренний стресс и зажатую челюсть от вечной гонки.</li>
+                <li>Найти свои личные «кнопки» удовольствия, а не гадать на кофейной гуще.</li>
+                <li>Перестать сканировать себя перед зеркалом каждое утро в поисках дефектов.</li>
+            </ul>
+            <p style="margin-top: 20px;">Это 10 дней кайфа, который мы заберем в свою реальную жизнь. И я прохожу этот путь вместе с вами от первого до последнего дня.</p>
+        </section>
+
+        <!-- АУДИТОРИЯ -->
+        <section>
+            <h2 class="section-title">Аудитория</h2>
+            <h3>Для кого этот интенсив?</h3>
+            <p style="margin-bottom: 25px;">Абсолютно для каждой. Неважно, в отношениях ты, свободна, у тебя был сложный опыт или его не было вообще.</p>
+            
+            <div class="grid-2">
+                <div class="box">
+                    <h4>В отношениях</h4>
+                    <p>Хочешь вернуть искру, глубину и убрать бытовой застой? Подойдет на 100%.</p>
+                </div>
+                <div class="box">
+                    <h4>Свободна</h4>
+                    <p>Устала от неопределенности и не понимаешь, почему выбираешь «не тех»? Подойдет.</p>
+                </div>
+            </div>
+            <div class="box" style="margin-top: 20px;">
+                <h4>С багажом опыта</h4>
+                <p>Накопила внутренние блоки, стыд и страхи? Тем более подойдет.</p>
+            </div>
+            <p style="margin-top: 20px; font-weight: 500; color: var(--chocolate);">Мы работаем с базой самой себя, а не с тем, как «быть удобной для мужчины».</p>
+        </section>
+
+        <!-- ТРАНСФОРМАЦИЯ -->
+        <section>
+            <h2 class="section-title">Трансформация</h2>
+            <h3>Что убираем / Что забираем</h3>
+            
+            <div class="grid-2" style="margin-bottom: 25px;">
+                <div class="box" style="background: #faf6f5;">
+                    <h4 style="color: #8c4a32;">Что выбрасываем:</h4>
+                    <ul>
+                        <li>Липкий стыд за себя, свое тело и свои желания.</li>
+                        <li>Зажимы в челюсти и теле от хронического стресса.</li>
+                        <li>Утреннего внутреннего критика с линейкой и лупой перед зеркалом.</li>
+                        <li>Привычку заслуживать любовь и одобрение.</li>
+                    </ul>
+                </div>
+                <div class="box" style="background: #f0f4f1;">
+                    <h4 style="color: #3b533f;">Что забираем навсегда:</h4>
+                    <ul>
+                        <li>Состояние «я офигенная» на постоянной основе, а не по праздникам.</li>
+                        <li>Настоящую свободу от чужих оценок и навязанных ролей.</li>
+                        <li>Право просто быть, дышать и кайфовать от собственной жизни.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Дополнительное фото в блок трансформации (положите intensive-photo.jpg в папку images) -->
+            <div class="photo-container">
+                <img src="images/intensive-photo.jpg" alt="Атмосфера интенсива">
+            </div>
+        </section>
+
+        <!-- ПРОГРАММА 1-5 -->
+        <section>
+            <h2 class="section-title">Программа</h2>
+            <h3>Дни 1 – 5: Фундамент и тело</h3>
+            
+            <div class="program-day">
+                <p><strong>День 1.</strong> Диагностика установок. Убираем мусор из головы и перестаем подстраиваться под чужие ожидания.</p>
+            </div>
+            <div class="program-day">
+                <p><strong>День 2.</strong> Работа с зажимами в теле. Возвращаем дыхание, убираем телесные блоки, которые душат либидо и энергию.</p>
+            </div>
+            <div class="program-day">
+                <p><strong>День 3.</strong> Сексуальность как энергия. Перестаем воспринимать секс через призму «стыдно/нельзя».</p>
+            </div>
+            <div class="program-day">
+                <p><strong>День 4.</strong> «Код отражения». Та самая зеркальная медитация. Учимся смотреть на себя без критики.</p>
+            </div>
+            <div class="program-day">
+                <p><strong>День 5.</strong> Ловушка «музы» и «наставницы». Почему пытаться быть для мужчины удобной учительницей — тупик для близости.</p>
+            </div>
+        </section>
+
+        <!-- ПРОГРАММА 6-10 -->
+        <section>
+            <h2 class="section-title">Программа</h2>
+            <h3>Дни 6 – 10: Состояние и закрепление</h3>
+            
+            <div class="program-day">
+                <p><strong>День 6.</strong> Свобода от оценок. Выстраиваем личные границы без чувства вины и извинений за себя.</p>
+            </div>
+            <div class="program-day">
+                <p><strong>День 7.</strong> Внутренняя опора. Закрепляем состояние «я офигенная» 24/7 независимо от внешних обстоятельств.</p>
+            </div>
+            <div class="program-day">
+                <p><strong>День 8.</strong> Качество коммуникации. Почему честный диалог и отсутствие запретов важнее любых заученных «техник».</p>
+            </div>
+            <div class="program-day">
+                <p><strong>День 9.</strong> Энергия желания. Учимся хотеть и получать без внутреннего сопротивления.</p>
+            </div>
+            <div class="program-day">
+                <p><strong>День 10.</strong> Твой личный код. Интегрируем практики в реальную жизнь и строим свою систему кайфа.</p>
+            </div>
+        </section>
+
+        <!-- РЕЗУЛЬТАТ И ФОРМАТ -->
+        <section>
+            <h2 class="section-title">Формат</h2>
+            <h3>Результат и побочные эффекты</h3>
+            <p><strong>Приятные побочные эффекты:</strong> Когда меняется твоя внутренняя оптика, вокруг меняется абсолютно всё. Мужчина начинает зажимать тебя на каждом углу, дарить цветы без повода, бронировать отель для свиданий и смотреть так, будто ты единственное, что имеет значение.</p>
+            
+            <h4 style="font-family: 'Playfair Display', serif; color: var(--chocolate); margin: 25px 0 10px 0; font-size: 18px;">Как это устроено:</h4>
+            <ul>
+                <li>Только практика и результат</li>
+                <li>Видео, аудио и наглядные материалы</li>
+                <li>Уютное комьюнити единомышленниц</li>
+                <li>Я иду в этот путь вместе с вами</li>
+            </ul>
+        </section>
+
+        <!-- ФИНАЛ / CTA -->
+        <header class="hero footer-cta">
+            <h2>Старт 8 августа</h2>
+            <h3>Готова сделать это для себя?</h3>
+            <p>Каждая участница получает красивый именной сертификат.</p>
+            
+            <div class="price-tag">859 ₽</div>
+            
+            <p style="font-size: 15px; margin-bottom: 10px;"><strong>Специальное условие:</strong> Для всех бывших и действующих клиентов действует персональная скидка! Уточняйте в личных сообщениях.</p>
+            
+            <div>
+                <a href="https://t.me/vasilisa_potapova" class="btn">Записаться на интенсив</a>
+            </div>
+            
+            <div class="note">Места ограничены для комфортной атмосферы и созвонов.</div>
+        </header>
+
+    </div>
+
 </body>
 </html>
