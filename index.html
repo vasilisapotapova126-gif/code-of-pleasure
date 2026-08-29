@@ -89,9 +89,13 @@
 
         .photo-container img {
             width: 100%;
-            height: 400px;
+            height: auto;
             display: block;
             object-fit: cover;
+        }
+
+        .hero .photo-container img {
+            height: 400px;
             object-position: center 25%;
         }
 
@@ -171,7 +175,6 @@
             color: var(--chocolate);
         }
 
-        /* Стили для блока об авторе в стиле референса */
         .author-section {
             text-align: center;
         }
@@ -283,11 +286,10 @@
             opacity: 0.85;
         }
 
-        .note {
-            font-size: 14px;
-            font-style: italic;
-            margin-top: 15px;
-            color: #c5b2a7;
+        @media (min-width: 600px) {
+            .grid-2 {
+                grid-template-columns: 1fr 1fr;
+            }
         }
 
         @media (max-width: 600px) {
@@ -327,7 +329,7 @@
                 <li>Найти свои личные «кнопки» удовольствия, а не гадать на кофейной гуще.</li>
                 <li>Перестать сканировать себя перед зеркалом каждое утро в поисках дефектов.</li>
             </ul>
-            <p style="margin-top: 20px;">Это 10 дней кайфа, который мы заберем в свою реальную жизнь. И я прохожу этот путь вместе с вами от первого до последнего дня.</p>
+            <p style="margin-top: 20px;">Это 10 дней кайфа, который ты заберешь в свою реальную жизнь и пройдешь в своем собственном темпе.</p>
         </section>
 
         <!-- АУДИТОРИЯ -->
@@ -437,9 +439,28 @@
             <ul>
                 <li>Только практика и результат</li>
                 <li>Видео, аудио и наглядные материалы</li>
-                <li>Уютное комьюнити единомышленниц</li>
-                <li>Я иду в этот путь вместе с вами</li>
+                <li>Самостоятельное прохождение в индивидуальном темпе</li>
             </ul>
+        </section>
+
+        <!-- ОТЗЫВЫ (СКРИНШОТЫ) -->
+        <section>
+            <h2 class="section-title">Отзывы</h2>
+            <h3>Что говорят участницы</h3>
+            <p style="margin-bottom: 25px;">Живые сообщения и скриншоты из нашего чата:</p>
+            
+            <div class="photo-container">
+                <img src="images/review-1.jpg" alt="Скриншот отзыва участницы 1">
+            </div>
+            
+            <div class="grid-2">
+                <div class="photo-container">
+                    <img src="images/review-2.jpg" alt="Скриншот отзыва участницы 2">
+                </div>
+                <div class="photo-container">
+                    <img src="images/review-3.jpg" alt="Скриншот отзыва участницы 3">
+                </div>
+            </div>
         </section>
 
         <!-- БЛОК ОБ АВТОРЕ -->
@@ -475,13 +496,11 @@
 
         <!-- ФИНАЛ / CTA -->
         <header class="hero footer-cta">
-            <h2>Старт 8 августа</h2>
+            <h2>Практический интенсив</h2>
             <h3>Готова сделать это для себя?</h3>
-            <p>Каждая участница получает красивый именной сертификат.</p>
+            <p>Индивидуальный формат для самостоятельного прохождения.</p>
             
-            <div class="price-tag">859 ₽</div>
-            
-            <p style="font-size: 15px; margin-bottom: 10px;"><strong>Специальное условие:</strong> Для всех, кто когда-либо приобретал мои консультации или любые другие продукты, действует специальная персональная скидка!</p>
+            <div class="price-tag">1629 ₽</div>
             
             <div>
                 <a href="https://t.me/vasilisa_potapova" class="btn">
@@ -489,8 +508,6 @@
                     <span class="btn-sub">(записаться на интенсив)</span>
                 </a>
             </div>
-            
-            <div class="note">Места ограничены для комфортной атмосферы и созвонов.</div>
         </header>
 
     </div>
