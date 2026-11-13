@@ -175,6 +175,54 @@
             color: var(--chocolate);
         }
 
+        /* Стили для блока Частые вопросы */
+        details {
+            background: var(--accent-light);
+            padding: 18px 22px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        details:last-child {
+            margin-bottom: 0;
+        }
+
+        summary {
+            font-weight: 500;
+            color: var(--chocolate);
+            font-size: 16px;
+            outline: none;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: "+";
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            color: var(--accent);
+            margin-left: 15px;
+        }
+
+        details[open] summary::after {
+            content: "—";
+        }
+
+        details p {
+            margin-top: 12px;
+            margin-bottom: 0;
+            font-size: 15px;
+            color: var(--text-muted);
+        }
+
         .author-section {
             text-align: center;
         }
@@ -233,6 +281,26 @@
             margin-top: 25px;
             color: var(--text-muted);
             font-size: 15px;
+        }
+
+        .author-links {
+            text-align: center;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #e6ded7;
+        }
+
+        .author-links a {
+            color: var(--chocolate);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid var(--accent);
+            padding-bottom: 2px;
+            transition: opacity 0.2s ease;
+        }
+
+        .author-links a:hover {
+            opacity: 0.7;
         }
 
         .footer-cta {
@@ -460,13 +528,49 @@
             </div>
             
             <div class="grid-2">
-                <div class="photo-container">
+                <div class="photo-container" style="margin-bottom: 0;">
                     <img src="images/review-2.jpg" alt="Скриншот отзыва участницы 2">
                 </div>
-                <div class="photo-container">
+                <div class="photo-container" style="margin-bottom: 0;">
                     <img src="images/review-3.jpg" alt="Скриншот отзыва участницы 3">
                 </div>
             </div>
+
+            <div class="grid-2" style="margin-top: 20px;">
+                <div class="photo-container" style="margin: 0;">
+                    <img src="images/review-4.jpg" alt="Скриншот отзыва участницы 4">
+                </div>
+                <div class="photo-container" style="margin: 0;">
+                    <img src="images/review-5.jpg" alt="Скриншот отзыва участницы 5">
+                </div>
+            </div>
+        </section>
+
+        <!-- ЧАСТЫЕ ВОПРОСЫ -->
+        <section>
+            <h2 class="section-title">Вопросы</h2>
+            <h3>Частые вопросы</h3>
+            
+            <details>
+                <summary>Подойдёт ли, если я не в отношениях (или наоборот)?</summary>
+                <p>Да, на 100%. Интенсив про твоё тело, дыхание и отношение к себе, а не про то, как быть удобной для мужчины.</p>
+            </details>
+            <details>
+                <summary>У меня нет опыта в таких практиках. Это страшно?</summary>
+                <p>Совсем нет, можно начинать с нуля. Практики бережные, темп выбираешь ты сама. Если что-то непонятно или некомфортно — всегда можно написать мне в чат.</p>
+            </details>
+            <details>
+                <summary>Кто отвечает на вопросы и как всё проходит?</summary>
+                <p>Я лично в твоём чате все 10 дней интенсива. Отвечаю, поддерживаю, могу записать голосовое.</p>
+            </details>
+            <details>
+                <summary>Сколько времени нужно уделять в день?</summary>
+                <p>От 10 до 30 минут в день в удобное для тебя время.</p>
+            </details>
+            <details>
+                <summary>Заменяет ли интенсив личную терапию?</summary>
+                <p>Нет. Интенсив — это телесные и психологические практики для работы с состоянием, а не клиническая терапия.</p>
+            </details>
         </section>
 
         <!-- БЛОК ОБ АВТОРЕ -->
@@ -484,39 +588,6 @@
                 <div class="stat-desc">автор блога и проекта</div>
             </div>
             <div class="author-stats-row">
-                <div class="stat-num">100%</div>
-                <div class="stat-desc">свободы от роли «хорошей девочки»</div>
-            </div>
-
-            <div class="photo-container" style="margin-top: 30px;">
-                <img src="images/author.jpg" alt="Василиса — психолог и сексолог" style="object-position: center 30%;">
-            </div>
-
-            <p class="author-bio-text">
-                Я знаю по себе, что такое годами жить в режиме жесткого контроля и попыток быть удобной для всех вокруг. Но настоящая жизнь и настоящий кайф начинаются ровно в тот момент, когда ты перестаешь заслуживать любовь и выбираешь себя. 
-            </p>
-            <p class="author-bio-text">
-                «Код Удовольствия» — это квинтэссенция бережной психологии, телесных практик и честного разговора о женской свободе, без занудной теории и скучных догм.
-            </p>
-        </section>
-
-        <!-- ФИНАЛ / CTA -->
-        <header class="hero footer-cta">
-            <h2>Практический интенсив</h2>
-            <h3>Готова сделать это для себя?</h3>
-            <p>Индивидуальный формат, который подойдет каждой.</p>
-            
-            <div class="price-tag">1629 ₽</div>
-            
-            <div>
-                <a href="https://t.me/vasilisa_potapova" class="btn">
-                    Открыть свой код<br>
-                    <span class="btn-sub">(записаться на интенсив)</span>
-                </a>
-            </div>
-        </header>
-
-    </div>
-
-</body>
+                <div class="
+                    </body>
 </html>
